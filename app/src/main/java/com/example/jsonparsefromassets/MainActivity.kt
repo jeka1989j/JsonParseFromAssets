@@ -46,10 +46,10 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
 
-        val name = findViewById<TextView>(R.id.nameOfAvenger)
+        /*val name = findViewById<TextView>(R.id.nameOfAvenger)
         val mobile = findViewById<TextView>(R.id.mobileOfAvenger)
         name.text = avengerList[1].name
-        mobile.text = avengerList[1].contact.mobile
+        mobile.text = avengerList[1].contact.mobile*/
     }
 
     private fun readJsonFile(): String {
