@@ -3,8 +3,11 @@ package com.example.jsonparsefromassets
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.jsonparsefromassets.model.Avenger
+import com.example.jsonparsefromassets.model.AvengersModelClass
 import com.example.jsonparsefromassets.model.Contact
+import com.example.jsonparsefromassets.recyclerviewAdapter.AvengerItemAdapter
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val avengerList: ArrayList<Avenger> = ArrayList()
 //        val avengerContact: ArrayList<Contact> = ArrayList()
+        val listOfAvengers: ArrayList<AvengersModelClass> = ArrayList()
 
         try {
             // instantiate a obj which called the json Object
@@ -40,6 +44,9 @@ class MainActivity : AppCompatActivity() {
                 // instantiate info about avenger & add it to the Avenger ArrayList()
                 val avengerDetails = Avenger(name, email, avengerMobile)
                 avengerList.add(avengerDetails)
+
+                val listAvengers = AvengersModelClass(avengerList)
+                listOfAvengers.add(listAvengers)
             }
 
         } catch (e: JSONException) {
@@ -50,6 +57,14 @@ class MainActivity : AppCompatActivity() {
         val mobile = findViewById<TextView>(R.id.mobileOfAvenger)
         name.text = avengerList[1].name
         mobile.text = avengerList[1].contact.mobile*/
+
+        // create instance of the recyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.avengers_list)
+        // instantiate the AvengerItemAdapter()
+        val adapter = AvengerItemAdapter(this, avengerList)
+
+        // set adapter instance equals to the recyclerView to inflate the items from our model
+        recyclerView.adapter = adapter
     }
 
     private fun readJsonFile(): String {
