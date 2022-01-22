@@ -1,0 +1,39 @@
+{
+  "avengers": [
+    {
+      "name": "Peter",
+      "email": "peterParker@gmail.com",
+      "contact": {
+        "mobile": "+91 258374652"
+      }
+    },
+    {
+      "name": "Widow",
+      "email": "blackWidow@gmail.com",
+      "contact": {
+        "mobile": "+91 389283938"
+      }
+    },
+    {
+      "name": "America",
+      "email": "captainAmerica@gmail.com",
+      "contact": {
+        "mobile": "+91 980337821"
+      }
+    },
+    {
+      "name": "IMen",
+      "email": "ironMen@gmail.com",
+      "contact": {
+        "mobile": "+91 093244751"
+      }
+    },
+    {
+      "name": "Hokey",
+      "email": "jeremyHokey@gmail.com",
+      "contact": {
+        "mobile": "+91 228913095"
+      }
+    }
+  ]
+}
